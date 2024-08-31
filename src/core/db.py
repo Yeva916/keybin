@@ -6,7 +6,7 @@ import os
 
 try:
     # client = MongoClient("mongodb://192.168.206.158:27017/")#192.168.206.158
-    client = MongoClient(os.environ.get('URL'))
+    client = MongoClient("mongodb://192.168.135.158:27017/")
     server_info = client.server_info()
     # print("Successfully connected to MongoDB", server_info["version"])
 except PyMongoError as e:
@@ -22,7 +22,7 @@ if db.get_collection("secrets") == None:
 # create collection of keys
 if db.get_collection("keys") == None:
     db.create_collection("keys")
-    print("Collection created: keys")
+    print("Collection created:a keys")
 
 # funciton to insert secret (secret_id, secret_name)
 
